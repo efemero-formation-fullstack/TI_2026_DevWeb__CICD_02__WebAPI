@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import calcService from "../../src/services/calc.service.js";
+import calcService from "../../src/services/calc.service";
 
 describe("calcService", () => {
   // ─────────────────────────────────────────────
@@ -51,7 +51,7 @@ describe("calcService", () => {
   // isEven
   // ─────────────────────────────────────────────
   describe("isEven", () => {
-    it.for([
+    const cases: [number, boolean][] = [
       [0, true],
       [2, true],
       [1000, true],
@@ -60,9 +60,14 @@ describe("calcService", () => {
       [3, false],
       [999, false],
       [-7, false],
-    ])("isEven(%i) must be %s", ([n, expected]) => {
-      expect(calcService.isEven(n)).toBe(expected);
-    });
+    ];
+
+    it.for(cases)(
+      "isEven(%i) must be %s",
+      ([n, expected]: [number, boolean]) => {
+        expect(calcService.isEven(n)).toBe(expected);
+      },
+    );
 
     it("returns a value of type boolean", () => {
       expect(typeof calcService.isEven(4)).toBe("boolean");

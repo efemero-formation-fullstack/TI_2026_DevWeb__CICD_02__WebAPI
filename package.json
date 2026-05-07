@@ -13,10 +13,10 @@
   "license": "ISC",
   "author": "Bstorm",
   "type": "module",
-  "main": "src/app.js",
+  "main": "src/app.ts",
   "scripts": {
-    "start": "node --env-file-if-exists=.env src/app.js",
-    "dev": "node --watch --env-file-if-exists=.env src/app.js",
+    "start": "tsx --env-file-if-exists=.env src/app.ts",
+    "dev": "tsx watch --env-file-if-exists=.env src/app.ts",
     "test:watch": "vitest --coverage",
     "test:run": "vitest run --coverage"
   },
@@ -24,7 +24,11 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
     "@vitest/coverage-v8": "^4.1.5",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
     "vitest": "^4.1.5"
   }
 }

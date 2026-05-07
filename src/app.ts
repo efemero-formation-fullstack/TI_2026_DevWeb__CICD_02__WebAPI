@@ -1,5 +1,5 @@
-import express from "express";
-import calcService from "./services/calc.service.js";
+import express, { Request, Response } from "express";
+import calcService from "./services/calc.service";
 
 // Env
 const { PORT } = process.env;
@@ -8,11 +8,11 @@ const { PORT } = process.env;
 const app = express();
 
 // Routes
-app.get("/api/hello", (req, res) => {
+app.get("/api/hello", (_req: Request, res: Response) => {
   res.json({ message: "👽 Bonjour le monde 👽" });
 });
 
-app.get("/api/even/:nb", (req, res) => {
+app.get("/api/even/:nb", (req: Request, res: Response) => {
   const nb = parseInt(req.params.nb);
   const isEven = calcService.isEven(nb);
 
@@ -21,9 +21,9 @@ app.get("/api/even/:nb", (req, res) => {
   });
 });
 
-app.get("/api/addition", (req, res) => {
-  const nb1 = parseFloat(req.query.nb1);
-  const nb2 = parseFloat(req.query.nb2);
+app.get("/api/addition", (req: Request, res: Response) => {
+  const nb1 = parseFloat(req.query.nb1 as string);
+  const nb2 = parseFloat(req.query.nb2 as string);
 
   if (isNaN(nb1) || isNaN(nb2)) {
     res.status(422).json({
