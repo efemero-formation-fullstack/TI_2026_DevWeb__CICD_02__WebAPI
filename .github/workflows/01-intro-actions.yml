@@ -1,0 +1,17 @@
+name: 01 - Intro aux actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  restore_project:
+    name: Checkout
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: List files
+        run: ls -la
