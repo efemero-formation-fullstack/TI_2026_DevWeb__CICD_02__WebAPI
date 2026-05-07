@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import calcService from "./services/calc.service";
+import calcService from "./services/calc.service.js";
 
 // Env
 const { PORT } = process.env;

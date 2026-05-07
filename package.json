@@ -15,7 +15,8 @@
   "type": "module",
   "main": "src/app.ts",
   "scripts": {
-    "start": "tsx --env-file-if-exists=.env src/app.ts",
+    "build": "tsc --project tsconfig.build.json",
+    "start": "node --env-file-if-exists=.env dist/app.js",
     "dev": "tsx watch --env-file-if-exists=.env src/app.ts",
     "test:watch": "vitest --coverage",
     "test:run": "vitest run --coverage"
