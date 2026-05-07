@@ -17,8 +17,8 @@
   "scripts": {
     "start": "node --env-file-if-exists=.env src/app.js",
     "dev": "node --watch --env-file-if-exists=.env src/app.js",
-    "test": "vitest --coverage",
-    "test:cicd": "vitest run --coverage"
+    "test:watch": "vitest --coverage",
+    "test": "vitest run --coverage"
   },
   "dependencies": {
     "express": "^5.2.1"

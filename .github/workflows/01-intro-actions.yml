@@ -17,7 +17,7 @@ jobs:
           node-version: 24
 
       - name: Install dependencies
-        run: npm install ci -D
+        run: npm install ci
 
       - name: Launch tests
         run: npm run test:cicd
