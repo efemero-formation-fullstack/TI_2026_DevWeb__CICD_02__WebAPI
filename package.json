@@ -1,0 +1,23 @@
+{
+  "name": "demo-webapi-deploy",
+  "version": "0.1.0",
+  "description": "Ceci est un demo de web api qui sera deployer via un CI/CD sur Github",
+  "homepage": "https://github.com/Formation-JS/TI_2026_DevWeb__CICD_02__WebAPI#readme",
+  "bugs": {
+    "url": "https://github.com/Formation-JS/TI_2026_DevWeb__CICD_02__WebAPI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Formation-JS/TI_2026_DevWeb__CICD_02__WebAPI.git"
+  },
+  "license": "ISC",
+  "author": "Bstorm",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
