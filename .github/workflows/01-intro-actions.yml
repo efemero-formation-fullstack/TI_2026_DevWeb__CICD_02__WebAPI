@@ -4,11 +4,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  restore_project:
-    name: Checkout
+  test_project:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
 
       - name: List files
         run: ls -la
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install -D
+
+      - name: Launch tests
+        run: npm run test:cicd
