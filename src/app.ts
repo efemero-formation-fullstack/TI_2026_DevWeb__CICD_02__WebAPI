@@ -13,6 +13,9 @@ app.get("/api/hello", (_req: Request, res: Response) => {
 });
 
 app.get("/api/even/:nb", (req: Request, res: Response) => {
+  if (typeof req.params.nb !== "string") {
+    return;
+  }
   const nb = parseInt(req.params.nb);
   const isEven = calcService.isEven(nb);
 
